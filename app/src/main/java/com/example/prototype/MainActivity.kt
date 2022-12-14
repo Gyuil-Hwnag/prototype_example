@@ -55,6 +55,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         binding.bottomNavi.setOnItemReselectedListener { menuItem ->
             when (menuItem.itemId) {
                 com.example.common.R.id.homeFragment -> {}
+                com.example.common.R.id.registerFragment -> {}
             }
         }
     }

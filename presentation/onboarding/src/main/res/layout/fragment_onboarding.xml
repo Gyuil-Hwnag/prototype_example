@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="@color/main_background">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/onboard_recycler"
@@ -29,13 +29,20 @@
         <TextView
             android:id="@+id/start_btn"
             style="@style/TextView.Bold.18"
+            android:textColor="@color/white"
+            android:background="@drawable/custom_orange_radius20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/onboard_recycler"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="@string/start">
+            android:text="@string/start"
+            android:onClick="@{() -> viewmodel.onStartClicked()}">
         </TextView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

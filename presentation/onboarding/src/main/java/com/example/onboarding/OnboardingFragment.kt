@@ -34,7 +34,7 @@ class OnboardingFragment : BaseFragment<FragmentOnboardingBinding, OnboardingVie
     override fun initDataBinding() {
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.navigate.collectLatest {
-                navigate(OnboardingFragmentDirections.actionOnboardingFramgentToHomeFragment())
+                navigate(OnboardingFragmentDirections.actionOnboardingFramgentToRegisterFragment())
             }
         }
     }
@@ -43,6 +43,13 @@ class OnboardingFragment : BaseFragment<FragmentOnboardingBinding, OnboardingVie
     }
 
     private fun initAdapter() {
+        val itemList = listOf<Int>(
+            R.mipmap.img_onboard_1_foreground,
+            R.mipmap.img_onboard_2_foreground,
+            R.mipmap.img_onboard_3_foreground,
+            R.mipmap.img_onboard_4_foreground
+        )
+        onboardAdapter.submitList(itemList)
         binding.onboardRecycler.apply {
             this.adapter = onboardAdapter
             this.addSnapPagerScroll()

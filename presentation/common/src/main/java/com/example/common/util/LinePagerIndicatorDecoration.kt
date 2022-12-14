@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class LinePagerIndicatorDecoration : RecyclerView.ItemDecoration() {
-    private val colorActive = -0x1
-    private val colorInactive = 0x66FFFFFF
+    private val colorActive = 0x66FF9100
+    private val colorInactive = 0x66000000
 
     /**
      * Height of the space the indicator takes up at the bottom of the view.
@@ -22,7 +22,7 @@ class LinePagerIndicatorDecoration : RecyclerView.ItemDecoration() {
     /**
      * Indicator stroke width.
      */
-    private val mIndicatorStrokeWidth = DP * 2
+    private val mIndicatorStrokeWidth = DP * 3
 
     /**
      * Indicator width.
@@ -32,7 +32,7 @@ class LinePagerIndicatorDecoration : RecyclerView.ItemDecoration() {
     /**
      * Padding between indicators.
      */
-    private val mIndicatorItemPadding = DP * 4
+    private val mIndicatorItemPadding = DP * 16
 
     /**
      * Some more natural animation interpolation

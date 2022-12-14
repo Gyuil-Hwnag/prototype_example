@@ -6,9 +6,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.example.common.util.bindGlide
 import com.example.onboarding.databinding.HolderOnboardBinding
 
-class OnboardAdapter() : ListAdapter<String, OnboardAdapter.ViewHolder>(HotsItemDiffCallback){
+class OnboardAdapter() : ListAdapter<Int, OnboardAdapter.ViewHolder>(HotsItemDiffCallback){
 
     init { setHasStableIds(true) }
 
@@ -29,17 +33,18 @@ class OnboardAdapter() : ListAdapter<String, OnboardAdapter.ViewHolder>(HotsItem
     class ViewHolder(private val binding: HolderOnboardBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: String) {
+        fun bind(item: Int) {
             binding.url = item
             binding.executePendingBindings()
         }
+
     }
 
-    internal object HotsItemDiffCallback : DiffUtil.ItemCallback<String>() {
-        override fun areItemsTheSame(oldItem: String, newItem: String) =
+    internal object HotsItemDiffCallback : DiffUtil.ItemCallback<Int>() {
+        override fun areItemsTheSame(oldItem: Int, newItem: Int) =
             oldItem== newItem
 
-        override fun areContentsTheSame(oldItem: String, newItem: String) =
+        override fun areContentsTheSame(oldItem: Int, newItem: Int) =
             oldItem.equals(newItem)
     }
 }

@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/launchFragment">
+    app:startDestination="@id/onboardingFramgent">
 
     <action
         android:id="@+id/action_main_fragment"
@@ -34,11 +34,22 @@
             app:destination="@id/homeFragment"
             app:enterAnim="@anim/enter_from_right"
             app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_onboardingFramgent_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right" />
     </fragment>
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.home.HomeFragment"
         android:label="HomeFragment" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.register.RegisterFragment"
+        android:label="RegisterFragment" >
     </fragment>
 </navigation>
