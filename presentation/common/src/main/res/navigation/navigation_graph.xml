@@ -19,8 +19,13 @@
         android:name="com.example.launch.LaunchFragment"
         android:label="LaunchFragment">
         <action
-            android:id="@+id/action_launchFragment_to_onboardingFramgent"
-            app:destination="@id/onboardingFramgent"
+            android:id="@+id/action_launchFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_launchFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
             app:enterAnim="@anim/enter_from_right"
             app:popExitAnim="@anim/exit_to_right" />
     </fragment>
@@ -30,15 +35,10 @@
         android:name="com.example.onboarding.OnboardingFragment"
         android:label="OnboardingFragment">
         <action
-            android:id="@+id/action_onboardingFramgent_to_homeFragment"
-            app:destination="@id/homeFragment"
+            android:id="@+id/action_onboardingFramgent_to_launchFragment"
+            app:destination="@id/launchFragment"
             app:enterAnim="@anim/enter_from_right"
-            app:popExitAnim="@anim/exit_to_right" />
-        <action
-            android:id="@+id/action_onboardingFramgent_to_registerFragment"
-            app:destination="@id/registerFragment"
-            app:enterAnim="@anim/enter_from_right"
-            app:popExitAnim="@anim/exit_to_right" />
+            app:popExitAnim="@anim/exit_to_right"/>
     </fragment>
 
     <fragment

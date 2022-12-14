@@ -1,9 +1,11 @@
 package com.example.launch
 
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.example.common.BaseFragment
 import com.example.launch.databinding.FragmentLaunchBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 
 
 @AndroidEntryPoint
@@ -26,6 +28,14 @@ class LaunchFragment : BaseFragment<FragmentLaunchBinding, LaunchViewModel>(R.la
     }
 
     override fun initDataBinding() {
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.navigate.collectLatest {
+                when(it) {
+                    is LaunchNavigationAction.NavigateToLogin -> navigate(LaunchFragmentDirections.actionLaunchFragmentToHomeFragment())
+                    is LaunchNavigationAction.NavigateToRegister -> navigate(LaunchFragmentDirections.actionLaunchFragmentToRegisterFragment())
+                }
+            }
+        }
     }
 
     override fun initAfterBinding() {

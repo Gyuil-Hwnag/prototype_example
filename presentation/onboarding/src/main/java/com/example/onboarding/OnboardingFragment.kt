@@ -34,7 +34,7 @@ class OnboardingFragment : BaseFragment<FragmentOnboardingBinding, OnboardingVie
     override fun initDataBinding() {
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.navigate.collectLatest {
-                navigate(OnboardingFragmentDirections.actionOnboardingFramgentToRegisterFragment())
+                navigate(OnboardingFragmentDirections.actionOnboardingFramgentToLaunchFragment())
             }
         }
     }
