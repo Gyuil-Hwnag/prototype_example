@@ -1,19 +1,20 @@
-package com.example.chat
+package com.example.onboarding
 
 import androidx.fragment.app.viewModels
-import com.example.chat.databinding.FragmentChatBinding
 import com.example.common.BaseFragment
+import com.example.onboarding.databinding.FragmentOnboardingBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
-class ChatFragment : BaseFragment<FragmentChatBinding, ChatViewModel>(R.layout.fragment_chat) {
 
-    private val TAG = "ChatFragment"
+@AndroidEntryPoint
+class OnboardingFragment : BaseFragment<FragmentOnboardingBinding, OnboardingViewModel>(R.layout.fragment_onboarding) {
+
+    private val TAG = "OnboardingFragment"
 
     override val layoutResourceId: Int
-        get() = R.layout.fragment_chat
+        get() = R.layout.fragment_onboarding
 
-    override val viewModel : ChatViewModel by viewModels()
+    override val viewModel : OnboardingViewModel by viewModels()
 
 
     override fun initStartView() {

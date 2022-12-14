@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Bold-->
+    <style name="TextView.Bold.20" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.Bold.18" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.Bold.16" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.Bold.14" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Normal-->
+    <style name="TextView.Normal.20" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextView.Normal.18" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextView.Normal.16" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextView.Normal.14" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <!-- Italic-->
+    <style name="TextView.Italic.20" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TextView.Italic.18" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TextView.Italic.16" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TextView.Italic.14" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+</resources>

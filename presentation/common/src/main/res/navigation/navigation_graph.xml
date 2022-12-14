@@ -14,27 +14,10 @@
         app:popUpTo="@id/navigation_graph"
         app:popUpToInclusive="true" />
 
-    <action
-        android:id="@+id/action_onboard_fragment"
-        app:destination="@id/onboardFragment"
-        app:enterAnim="@anim/nav_default_enter_anim"
-        app:exitAnim="@anim/nav_default_exit_anim"
-        app:popEnterAnim="@anim/nav_default_enter_anim"
-        app:popExitAnim="@anim/nav_default_pop_exit_anim"
-        app:popUpTo="@id/navigation_graph"
-        app:popUpToInclusive="true" />
-
     <fragment
         android:id="@+id/launchFragment"
         android:name="com.example.launch.LaunchFragment"
-        android:label="LaunchFragment">
-        <action
-            android:id="@+id/action_launchFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-    </fragment>
+        android:label="LaunchFragment"/>
 
     <fragment
         android:id="@+id/homeFragment"
