@@ -2,6 +2,7 @@ package com.example.register
 
 
 sealed class RegisterNavigationAction {
-    class NavigateToLogin(val id: String, val password: String): RegisterNavigationAction()
-    object NavigateToRegister: RegisterNavigationAction()
+    object NavigateToAdult: RegisterNavigationAction()
+    object NavigateToChild: RegisterNavigationAction()
+    object NavigateToEnterprise: RegisterNavigationAction()
 }

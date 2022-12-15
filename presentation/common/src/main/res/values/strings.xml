@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">prototype</string>
+
+    <string name="adult">성인</string>
+    <string name="child">어린이</string>
+    <string name="enterprise">기업</string>
+
+    <string name="login">Go!</string>
+    <string name="register">회원가입</string>
 </resources>

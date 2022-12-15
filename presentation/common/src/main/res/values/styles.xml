@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- ToolBar -->
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/black</item>
+        <item name="android:textSize">18dp</item>
+        <item name="actionMenuTextColor">@color/black</item>
+    </style>
+
     <!-- Bold-->
+    <style name="TextView.Bold.28" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">28dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="TextView.Bold.20" parent="@style/Widget.AppCompat.TextView">
         <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>
@@ -23,6 +36,17 @@
     </style>
 
     <!-- Normal-->
+
+    <style name="TextView.Normal.32" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">32dp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextView.Normal.28" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">28dp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
     <style name="TextView.Normal.20" parent="@style/Widget.AppCompat.TextView">
         <item name="android:textSize">20dp</item>
         <item name="android:textStyle">normal</item>

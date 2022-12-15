@@ -18,21 +18,21 @@ class RegisterViewModel @Inject constructor(
     private val _navigate: MutableSharedFlow<RegisterNavigationAction> = MutableSharedFlow<RegisterNavigationAction>()
     val navigate: SharedFlow<RegisterNavigationAction> = _navigate.asSharedFlow()
 
-    val id: MutableStateFlow<String> = MutableStateFlow<String>("")
-    val password: MutableStateFlow<String> = MutableStateFlow<String>("")
-
-    override fun onLoginClicked() {
+    override fun onAdultClick() {
         baseViewModelScope.launch {
-            _navigate.emit(RegisterNavigationAction.NavigateToLogin(
-                id = id.value,
-                password = password.value
-            ))
+            _navigate.emit(RegisterNavigationAction.NavigateToAdult)
         }
     }
 
-    override fun onRegisterClicked() {
+    override fun onChildClick() {
         baseViewModelScope.launch {
-            _navigate.emit(RegisterNavigationAction.NavigateToRegister)
+            _navigate.emit(RegisterNavigationAction.NavigateToChild)
+        }
+    }
+
+    override fun onEnterpriseClick() {
+        baseViewModelScope.launch {
+            _navigate.emit(RegisterNavigationAction.NavigateToEnterprise)
         }
     }
 }

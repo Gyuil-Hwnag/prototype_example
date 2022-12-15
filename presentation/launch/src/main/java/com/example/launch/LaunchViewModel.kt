@@ -23,10 +23,11 @@ class LaunchViewModel @Inject constructor(
 
     override fun onLoginClicked() {
         baseViewModelScope.launch {
-            _navigate.emit(LaunchNavigationAction.NavigateToLogin(
-                id = id.value,
-                password = password.value
-            ))
+            if(id.value == "" || password.value == "") {
+                _navigate.emit(LaunchNavigationAction.NavigateToEmpty)
+            } else {
+                _navigate.emit(LaunchNavigationAction.NavigateToLogin(id = id.value, password = password.value))
+            }
         }
     }
 

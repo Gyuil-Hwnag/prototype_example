@@ -2,6 +2,7 @@ package com.example.register
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.common.BaseFragment
 import com.example.register.databinding.FragmentRegisterBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,6 +18,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding, RegisterViewModel
         get() = R.layout.fragment_register
 
     override val viewModel : RegisterViewModel by viewModels()
+    private val navController by lazy { findNavController() }
 
 
     override fun initStartView() {
@@ -25,22 +27,27 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding, RegisterViewModel
             this.lifecycleOwner = viewLifecycleOwner
         }
         exception = viewModel.errorEvent
+        initToolbar()
     }
 
     override fun initDataBinding() {
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.navigate.collectLatest {
                 when(it) {
-                    is RegisterNavigationAction.NavigateToLogin -> {}
-                    is RegisterNavigationAction.NavigateToLogin -> {
-                        it.id
-                        it.password
-                    }
+                    is RegisterNavigationAction.NavigateToAdult -> navigate(RegisterFragmentDirections.actionRegisterFragmentToRegisterInfoFragment())
+                    is RegisterNavigationAction.NavigateToChild -> navigate(RegisterFragmentDirections.actionRegisterFragmentToRegisterInfoFragment())
+                    is RegisterNavigationAction.NavigateToEnterprise -> navigate(RegisterFragmentDirections.actionRegisterFragmentToRegisterInfoFragment())
                 }
             }
         }
     }
 
     override fun initAfterBinding() {
+    }
+
+    private fun initToolbar() {
+        binding.backBtn.setOnClickListener {
+            navController.popBackStack()
+        }
     }
 }

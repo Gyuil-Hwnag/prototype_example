@@ -63,10 +63,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // Jetpack Navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.3.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.4.2")
+    implementation("androidx.navigation:navigation-ui-ktx:2.4.2")
     // Feature module Support
-    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.3.0")
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.4.2")
 
     // glide
     implementation 'com.github.bumptech.glide:glide:4.13.0'

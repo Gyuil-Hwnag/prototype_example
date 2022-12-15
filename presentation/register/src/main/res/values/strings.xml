@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">prototype</string>
+
+    <string name="content1">기다리고 있었어요!\n지금 바로</string>
+    <string name="content2">가입하기 :)</string>
 </resources>
