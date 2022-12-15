@@ -45,6 +45,7 @@ class RegisterInfoFragment : BaseFragment<FragmentRegisterInfoBinding, RegisterI
                             editor.putString(email, it.email)
                             editor.putString(password, it.password)
                             editor.commit()
+                            toastMessage("회원가입이 완료 되었습니다!")
                             navigate(RegisterInfoFragmentDirections.actionRegisterInfoFragmentToLaunchFragment())
                         }
                     }
