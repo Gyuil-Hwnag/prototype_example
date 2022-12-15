@@ -45,12 +45,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         }
         binding.bottomNavi.setupWithNavController(navController)
 
-        // ADD 버튼 클릭
-//        binding.bottomNavi.menu.getItem(2).isEnabled = false
-//        binding.bottomNaviAddBtn.setOnClickListener {
-//            navController.navigate(R.id.addFragment)
-//        }
-
         // 중복터치 막기!!
         binding.bottomNavi.setOnItemReselectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -62,14 +56,10 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
     private fun showBottomNav() {
         binding.bottomNavi.visibility = View.VISIBLE
-//        binding.bottomNaviAddBtn.visibility = View.VISIBLE
-//        binding.bottomNaviAddBackground.visibility = View.VISIBLE
     }
 
     private fun hideBottomNav() {
         binding.bottomNavi.visibility = View.GONE
-//        binding.bottomNaviAddBtn.visibility = View.GONE
-//        binding.bottomNaviAddBackground.visibility= View.GONE
     }
 
     override fun onBackPressed() {
