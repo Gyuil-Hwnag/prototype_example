@@ -23,9 +23,7 @@ class CommunityAdapter(
             parent,
             false
         )
-        viewDataBinding.layoutMain.setOnClickListener {
-            eventListener.onCommunityItemClicked(community = viewDataBinding.holder!!)
-        }
+        viewDataBinding.eventListener = eventListener
         return ViewHolder(viewDataBinding)
     }
 

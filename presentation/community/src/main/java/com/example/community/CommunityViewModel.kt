@@ -16,12 +16,12 @@ class CommunityViewModel @Inject constructor(
 
     private val TAG = "CommunityViewModel"
 
-    private val _navigate: MutableSharedFlow<Community> = MutableSharedFlow<Community>()
-    val navigate: SharedFlow<Community> = _navigate.asSharedFlow()
+    private val _navigate: MutableSharedFlow<Int> = MutableSharedFlow<Int>()
+    val navigate: SharedFlow<Int> = _navigate.asSharedFlow()
 
-    override fun onCommunityItemClicked(community: Community) {
+    override fun onCommunityItemClicked(communityId: Int) {
         baseViewModelScope.launch {
-            _navigate.emit(community)
+            _navigate.emit(communityId)
         }
     }
 }
