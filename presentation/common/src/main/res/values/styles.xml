@@ -35,6 +35,11 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TextView.Bold.12" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <!-- Normal-->
 
     <style name="TextView.Normal.32" parent="@style/Widget.AppCompat.TextView">
@@ -67,6 +72,11 @@
         <item name="android:textStyle">italic</item>
     </style>
 
+    <style name="TextView.Normal.12" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
     <!-- Italic-->
     <style name="TextView.Italic.20" parent="@style/Widget.AppCompat.TextView">
         <item name="android:textSize">20dp</item>
@@ -88,4 +98,24 @@
         <item name="android:textStyle">italic</item>
     </style>
 
+    <!-- Default-->
+    <style name="TextView.Default.20" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="TextView.Default.18" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="TextView.Default.16" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="TextView.Default.14" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="TextView.Default.12" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">12dp</item>
+    </style>
 </resources>

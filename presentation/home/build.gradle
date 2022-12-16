@@ -65,4 +65,7 @@ dependencies {
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+
+    // FlexBox
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
 }

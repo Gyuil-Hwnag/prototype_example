@@ -53,6 +53,8 @@ dependencies {
     implementation(project(":presentation:detail"))
     implementation(project(":presentation:register"))
     implementation(project(":presentation:invite"))
+    implementation(project(":presentation:community"))
+    implementation(project(":presentation:my"))
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'

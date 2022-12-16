@@ -14,13 +14,13 @@
         android:title="community"/>
 
     <item
-        android:id="@+id/chatFramgnet"
+        android:id="@+id/chatFragment"
         android:enabled="true"
         android:icon="@drawable/ic_chat"
         android:title="chat"/>
 
     <item
-        android:id="@+id/myPageFragment"
+        android:id="@+id/myFragment"
         android:enabled="true"
         android:icon="@mipmap/ic_my_foreground"
         android:title="my"/>

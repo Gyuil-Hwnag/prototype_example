@@ -10,4 +10,9 @@
 
     <color name="main_background">#FBF4EE</color>
     <color name="main_orange">#FF9100</color>
+    <color name="gray09">#424242</color>
+    <color name="gray08">#616161</color>
+    <color name="gray07">#757575</color>
+    <color name="gray06">#9E9E9E</color>
+    <color name="gray05">#BDBDBD</color>
 </resources>
