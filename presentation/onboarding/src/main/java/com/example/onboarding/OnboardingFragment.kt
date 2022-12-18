@@ -2,7 +2,6 @@ package com.example.onboarding
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import com.example.common.BaseFragment
 import com.example.common.util.LinePagerIndicatorDecoration
 import com.example.common.util.addSnapPagerScroll

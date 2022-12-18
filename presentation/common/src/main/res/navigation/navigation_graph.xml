@@ -14,6 +14,16 @@
         app:popUpTo="@id/navigation_graph"
         app:popUpToInclusive="true" />
 
+    <action
+        android:id="@+id/action_launch_fragment"
+        app:destination="@id/launchFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        app:popUpTo="@id/navigation_graph"
+        app:popUpToInclusive="true" />
+
     <fragment
         android:id="@+id/launchFragment"
         android:name="com.example.launch.LaunchFragment"
@@ -60,6 +70,17 @@
         android:id="@+id/chatFragment"
         android:name="com.example.chat.ChatFragment"
         android:label="ChatFragment">
+        <action
+            android:id="@+id/action_chatFragment_to_chatDetailFragment"
+            app:destination="@id/chatDetailFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatDetailFragment"
+        android:name="com.example.chat.detail.ChatDetailFragment"
+        android:label="ChatDetailFragment">
     </fragment>
 
     <fragment
