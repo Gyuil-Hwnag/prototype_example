@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">prototype</string>
     <string name="detail_title">게시글 상세</string>
+    <string name="invite">참여하기</string>
 </resources>

@@ -45,7 +45,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             viewModel.navigate.collectLatest {
                 when(it) {
                     is HomeNavigationAction.NavigateToCategoryDetail -> {}
-                    is HomeNavigationAction.NavigateToDetail -> {}
+                    is HomeNavigationAction.NavigateToDetail -> navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment())
                 }
             }
         }

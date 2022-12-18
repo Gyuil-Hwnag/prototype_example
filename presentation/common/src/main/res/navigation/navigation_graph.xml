@@ -49,6 +49,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.home.HomeFragment"
         android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right"/>
     </fragment>
 
     <fragment
@@ -94,8 +99,8 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.detail.DetailFragemnt"
-        android:label="DetailFragemnt">
+        android:name="com.example.detail.DetailFragment"
+        android:label="DetailFragment">
     </fragment>
 
     <fragment
