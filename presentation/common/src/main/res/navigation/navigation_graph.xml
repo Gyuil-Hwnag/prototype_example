@@ -93,6 +93,12 @@
     </fragment>
 
     <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.detail.DetailFragemnt"
+        android:label="DetailFragemnt">
+    </fragment>
+
+    <fragment
         android:id="@+id/communityDetailFragment"
         android:name="com.example.community.detail.CommunityDetailFragment"
         android:label="CommunityDetailFragment">
