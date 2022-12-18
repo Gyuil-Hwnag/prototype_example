@@ -1,33 +1,28 @@
-package com.example.home
+package com.example.category
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.navigation.fragment.findNavController
+import com.example.category.databinding.FragmentCategoryBinding
 import com.example.common.BaseFragment
-import com.example.home.databinding.FragmentHomeBinding
 import com.example.model.Category
 import com.example.model.HotItem
-import com.example.model.Recommended
-import com.google.android.flexbox.AlignItems
-import com.google.android.flexbox.FlexDirection
-import com.google.android.flexbox.FlexboxLayoutManager
-import com.google.android.flexbox.JustifyContent
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {
+class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel>(R.layout.fragment_category) {
 
-    private val TAG = "HomeFragment"
+    private val TAG = "CategoryFragment"
 
     override val layoutResourceId: Int
-        get() = R.layout.fragment_home
+        get() = R.layout.fragment_category
 
-    override val viewModel : HomeViewModel by viewModels()
+    override val viewModel : CategoryViewModel by viewModels()
+    private val navController by lazy { findNavController() }
     private val categoryAdapter by lazy { CategoryAdapter(viewModel) }
-    private val recommededAdapter by lazy { RecommededAdapter(viewModel) }
-    private val hotAdapter by lazy { HotItemAdapter(viewModel) }
+    private val categoryListAdapter by lazy { CategoryListAdapter(viewModel) }
 
     override fun initStartView() {
         binding.apply {
@@ -35,8 +30,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             this.lifecycleOwner = viewLifecycleOwner
         }
         exception = viewModel.errorEvent
+        initToolbar()
         initCategory()
-        initRecommended()
         initHotItem()
     }
 
@@ -44,14 +39,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.navigate.collectLatest {
                 when(it) {
-                    is HomeNavigationAction.NavigateToCategoryDetail -> navigate(HomeFragmentDirections.actionHomeFragmentToCategoryFragment())
-                    is HomeNavigationAction.NavigateToDetail -> navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment())
+                    is CategoryNavigationAction.NavigateToDetail -> navigate(CategoryFragmentDirections.actionCategoryFragmentToDetailFragment())
+                    else -> {}
                 }
             }
         }
     }
 
     override fun initAfterBinding() {
+    }
+
+    private fun initToolbar() {
+        binding.backBtn.setOnClickListener {
+            navController.popBackStack()
+        }
     }
 
     private fun initCategory() {
@@ -106,50 +107,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             category5, category6, category7, category8, category9, category10)
         categoryAdapter.submitList(categoryList)
 
-        val flexLayoutManager = FlexboxLayoutManager(requireContext()).apply {
-            this.flexDirection = FlexDirection.ROW
-            this.justifyContent = JustifyContent.CENTER
-            this.alignItems = AlignItems.CENTER
-        }
         binding.categoryRecycler.apply {
             this.adapter = categoryAdapter
-            this.layoutManager = flexLayoutManager
         }
-    }
-
-    private fun initRecommended() {
-        val recommended1 = Recommended(
-            recommendId = 1,
-            recommendImg = R.drawable.children_paint,
-            recommendName = "아이들과 함께하는 제작",
-            teamName = "[TEAM] 메이커스",
-            contents = "아이들과 디자인 부터 제작까지 함께하는 케릭터 인형 만들기"
-        )
-        val recommended2 = Recommended(
-            recommendId = 1,
-            recommendImg = R.drawable.adult_paint,
-            recommendName = "처음 그림을 접하는 성인을 위한 그림 기초반",
-            teamName = "[TEAM] 어른이들",
-            contents = "처음 그림을 접해보는 성인을 위한 그림 기초반"
-        )
-        val recommended3 = Recommended(
-            recommendId = 1,
-            recommendImg = R.drawable.cup,
-            recommendName = "직접 컵 만들어 보기[기초반]",
-            teamName = "[TEAM] 공작 제작소",
-            contents = "직접 컵을 만들어 보면서 다지인 도면 제작부터 발주 까지"
-        )
-        val recommended4 = Recommended(
-            recommendId = 1,
-            recommendImg = R.drawable.minium_child_paint,
-            recommendName = "유아를 위한 그림 그리기반",
-            teamName = "[TEAM] 미니멀 차일드",
-            contents = "3세부터 7세까지를 위한 그림 그리기반"
-        )
-        val recommendedList = listOf<Recommended>(recommended1, recommended2, recommended3, recommended4)
-        recommededAdapter.submitList(recommendedList)
-
-        binding.recommendedRecycler.adapter = recommededAdapter
     }
 
     private fun initHotItem() {
@@ -182,8 +142,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             contents = "3세부터 7세까지를 위한 그림 그리기반"
         )
         val hotList = listOf<HotItem>(hot1, hot2, hot3, hot4)
-        hotAdapter.submitList(hotList)
+        categoryListAdapter.submitList(hotList)
 
-        binding.hotRecycler.adapter = hotAdapter
+        binding.hotRecycler.adapter = categoryListAdapter
     }
 }

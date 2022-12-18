@@ -64,6 +64,22 @@
             app:destination="@id/detailFragment"
             app:enterAnim="@anim/enter_from_right"
             app:popExitAnim="@anim/exit_to_right"/>
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.category.CategoryFragment"
+        android:label="CategoryFragment">
+        <action
+            android:id="@+id/action_categoryFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right"/>
     </fragment>
 
     <fragment

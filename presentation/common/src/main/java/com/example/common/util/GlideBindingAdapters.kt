@@ -80,3 +80,11 @@ fun ImageView.bindGlideInt(uri: Int) {
         .into(this)
 }
 
+@BindingAdapter("glideIntNoCorner")
+fun ImageView.bindGlideIntNoCorner(uri: Int) {
+    Glide.with(context)
+        .load(uri)
+        .transform(CenterCrop())
+        .into(this)
+}
+
